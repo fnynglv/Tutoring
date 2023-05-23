@@ -14,6 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            // ini ga boleh kebalik, karena yang satu kan ngandung foreign key
+            PostSeeder::class,
+            CommentSeeder::class,
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
